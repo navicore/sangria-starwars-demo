@@ -1,7 +1,7 @@
-package onextent.akka.demo.sangria
+package onextent.akka.demo.sangria.http
 
-import collection.JavaConverters._
 import java.io.IOException
+
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.model.headers.{HttpOrigin, HttpOriginRange}
 import akka.http.scaladsl.server.Directives._
@@ -10,6 +10,8 @@ import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import ch.megard.akka.http.cors.scaladsl.settings.CorsSettings
 import com.typesafe.config.{Config, ConfigFactory}
 import com.typesafe.scalalogging.LazyLogging
+
+import scala.collection.JavaConverters._
 
 trait HttpSupport extends LazyLogging {
 

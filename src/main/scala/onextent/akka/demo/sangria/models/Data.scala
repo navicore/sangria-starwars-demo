@@ -1,4 +1,4 @@
-package onextent.akka.demo.sangria
+package onextent.akka.demo.sangria.models
 
 object Episode extends Enumeration {
   val NEWHOPE, EMPIRE, JEDI = Value

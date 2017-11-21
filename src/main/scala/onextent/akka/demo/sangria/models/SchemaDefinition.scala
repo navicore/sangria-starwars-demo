@@ -1,5 +1,6 @@
-package onextent.akka.demo.sangria
+package onextent.akka.demo.sangria.models
 
+import onextent.akka.demo.sangria.models
 import sangria.execution.deferred.{Fetcher, HasId}
 import sangria.schema._
 
@@ -15,8 +16,8 @@ object SchemaDefinition {
     * cached for the duration of a query.
     */
   val characters: Fetcher[CharacterRepo,
-                          Character with Product with Serializable,
-                          Character with Product with Serializable,
+                          models.Character with Product with Serializable,
+                          models.Character with Product with Serializable,
                           String] =
     Fetcher.caching((ctx: CharacterRepo, ids: Seq[String]) ⇒
       Future.successful(ids.flatMap(id ⇒
@@ -38,12 +39,12 @@ object SchemaDefinition {
     )
   )
 
-  val Character: InterfaceType[CharacterRepo, Character] =
+  val Character: InterfaceType[CharacterRepo, models.Character] =
     InterfaceType(
       "Character",
       "A character in the Star Wars Trilogy",
       () ⇒
-        fields[CharacterRepo, Character](
+        fields[CharacterRepo, models.Character](
           Field("id",
                 StringType,
                 Some("The id of the character."),
