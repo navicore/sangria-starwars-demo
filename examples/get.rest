@@ -4,8 +4,12 @@ Content-Type: application/json; charset=utf-8
 
 --
 --
-
 POST /starwars
 
 {"query": "{hero {name, friends {name}}}"}
+
+--
+POST /starwars
+
+{"query": "query Test($humanId: String!){human(id: $humanId) {name, homePlanet, friends {name}}}", "variables": {"humanId": "1000"}}
 

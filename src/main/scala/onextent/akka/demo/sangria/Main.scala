@@ -16,11 +16,11 @@ object Main extends App with LazyLogging with HttpSupport with Directives {
 
   val route: Route =
     logRequest(urlpath) {
-      handleErrors {
+      //handleErrors {
         cors(corsSettings) {
           StarwarsRoute()
         }
-      }
+      //}
     }
 
   Http().bindAndHandle(route, "0.0.0.0", port)
