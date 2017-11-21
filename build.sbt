@@ -23,17 +23,13 @@ libraryDependencies ++=
     "com.typesafe" % "config" % "1.2.1",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
 
-    "com.typesafe.akka" %% "akka-actor" % akkaVersion,
-    "com.typesafe.akka" %% "akka-stream" % akkaVersion,
-    "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
+    "org.sangria-graphql" %% "sangria" % "1.3.2",
+    "org.sangria-graphql" %% "sangria-spray-json" % "1.0.0",
+
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
     "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
 
-    "org.json4s" %% "json4s-native" % "3.5.3",
-    "com.github.nscala-time" %% "nscala-time" % "2.16.0",
-
     "org.scalatest" %% "scalatest" % "3.0.1" % "test"
-
   )
 
 dependencyOverrides ++= Seq(

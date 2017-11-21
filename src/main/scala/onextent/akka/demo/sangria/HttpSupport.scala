@@ -11,7 +11,7 @@ import ch.megard.akka.http.cors.scaladsl.settings.CorsSettings
 import com.typesafe.config.{Config, ConfigFactory}
 import com.typesafe.scalalogging.LazyLogging
 
-trait ErrorSupport extends LazyLogging {
+trait HttpSupport extends LazyLogging {
 
   val conf: Config = ConfigFactory.load()
   val corsOriginList: List[HttpOrigin] = conf
