@@ -3,6 +3,7 @@ package onextent.akka.demo.sangria.models
 import onextent.akka.demo.sangria.models
 import sangria.execution.deferred.{Fetcher, HasId}
 import sangria.schema._
+import sangria.macros.derive._
 
 import scala.concurrent.Future
 
@@ -67,6 +68,15 @@ object SchemaDefinition {
       )
     )
 
+  /*
+  implicit val Human =
+  deriveObjectType[CharacterRepo, Human](
+    //Interfaces(Character),
+    ObjectTypeDescription("A humanoid creature in the Star Wars universe."),
+    DocumentField("name", "The name of the human."),
+  )
+   */
+
   val Human =
     ObjectType(
       "Human",
@@ -98,7 +108,7 @@ object SchemaDefinition {
       )
     )
 
-  val Droid = ObjectType(
+  implicit val Droid = ObjectType(
     "Droid",
     "A mechanical creature in the Star Wars universe.",
     interfaces[CharacterRepo, Droid](Character),
